@@ -13,7 +13,18 @@ interface Props {
 function FlavorList({ flavors }: Props) {
   return (
     <div className="FlavorList">
-      
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Votes</th>
+        </tr>
+        {flavors.map(flavor =>
+        <tr>
+           <td> <a href={"#" + flavor.id?.toString()}> {flavor.name}</a> </td>
+          <td> {flavor.votes} </td>
+        </tr>
+        )}
+      </table>
     </div>
   );
 }
